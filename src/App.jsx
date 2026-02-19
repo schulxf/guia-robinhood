@@ -299,7 +299,7 @@ export default function App() {
       {/* Main Content / Steps */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="space-y-4">
-          {tutorialSteps.map((phase, index) => {
+          {tutorialSteps.map((phase) => {
             const isExpanded = expandedPhase === phase.id;
             const phaseTasksCompleted = phase.tasks.filter(t => completedTasks.includes(t.id)).length;
             const isPhaseComplete = phaseTasksCompleted === phase.tasks.length;
