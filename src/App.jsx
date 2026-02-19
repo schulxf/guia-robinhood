@@ -159,11 +159,24 @@ export default function App() {
   const [completedTasks, setCompletedTasks] = useState([]);
   const [expandedPhase, setExpandedPhase] = useState('phase1');
 
-  // Configuração para o Discord (Meta Tags Open Graph)
+  // Configuração para o Discord e Navegador (Meta Tags, Title e Favicon)
   useEffect(() => {
-    // Título da aba do navegador
-    document.title = "Guia Airdrop: Robinhood Testnet | Mercurius Crypto";
+    // ----------------------------------------------------------------------
+    // 1. ALTERE O NOME DA ABA AQUI (Texto que aparece no topo do navegador)
+    // ----------------------------------------------------------------------
+    document.title = "Mercurius | Robinhood Testnet";
     
+    // 2. CONFIGURA O ÍCONE DA ABA (Favicon)
+    let favicon = document.querySelector("link[rel~='icon']");
+    if (!favicon) {
+      favicon = document.createElement('link');
+      favicon.rel = 'icon';
+      document.head.appendChild(favicon);
+    }
+    // Usando a logo da Mercurius como ícone da aba
+    favicon.href = "https://i.imgur.com/QAqVuyN.png";
+
+    // 3. CONFIGURA O CARD DO DISCORD
     const setMetaTag = (property, content) => {
       let element = document.querySelector(`meta[property="${property}"]`) || document.querySelector(`meta[name="${property}"]`);
       if (!element) {
@@ -175,7 +188,6 @@ export default function App() {
       element.setAttribute('content', content);
     };
 
-    // Informações que aparecerão no Card do Discord
     setMetaTag('og:title', 'Guia de Interação: Robinhood Testnet');
     setMetaTag('og:description', 'Passo a passo completo e gratuito para interagir na testnet da Robinhood e se posicionar para o possível airdrop. Exclusivo Mercurius Crypto.');
     setMetaTag('og:image', 'https://i.imgur.com/QAqVuyN.png'); // Imagem do preview
@@ -211,7 +223,6 @@ export default function App() {
                 alt="Mercurius Crypto" 
                 className="h-12 sm:h-[72px] object-contain py-2"
                 onError={(e) => {
-                  // Fallback visual caso a imagem não carregue no preview
                   e.target.style.display = 'none';
                   e.target.nextSibling.style.display = 'flex';
                 }}
