@@ -5,6 +5,7 @@ import {
   ChevronDown, ChevronUp, Trophy, Globe, AlertTriangle, ArrowRight
 } from 'lucide-react';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 // --- Dados do Tutorial ---
 const tutorialSteps = [
@@ -403,6 +404,7 @@ export default function App() {
         </div>
       </footer>
       <Analytics />
+      <SpeedInsights />
     </div>
   );
 }
