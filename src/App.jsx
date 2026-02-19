@@ -17,7 +17,11 @@ const tutorialSteps = [
         id: 't1_1',
         title: 'Fazer Bridge de Sepolia para Robinhood',
         desc: 'Transfira seu $ETH de teste da rede Sepolia para a Robinhood Testnet usando a ponte da Arbitrum.',
-        link: 'https://portal.arbitrum.io/bridge'
+        link: 'https://portal.arbitrum.io/bridge',
+        subLinks: [
+          { name: 'Minerador de Sepolia', url: 'https://sepolia-faucet.pk910.de/' },
+          { name: 'Comprar Sepolia', url: 'https://sepolia-faucet.pk910.de/' }
+        ]
       },
       {
         id: 't1_2',
