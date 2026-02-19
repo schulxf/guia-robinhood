@@ -4,6 +4,7 @@ import {
   CheckCircle2, Circle, ExternalLink, ShieldCheck, 
   ChevronDown, ChevronUp, Trophy, Globe, AlertTriangle, ArrowRight
 } from 'lucide-react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 // --- Dados do Tutorial ---
 const tutorialSteps = [
@@ -421,6 +422,7 @@ export default function App() {
           </p>
         </div>
       </footer>
+      <SpeedInsights />
     </div>
   );
 }
