@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { 
   Droplet, ArrowRightLeft, Image as ImageIcon, Code, 
   CheckCircle2, Circle, ExternalLink, ShieldCheck, 
   ChevronDown, ChevronUp, Trophy, Globe, AlertTriangle, ArrowRight
 } from 'lucide-react';
-import { SpeedInsights } from '@vercel/speed-insights/react';
 
 // --- Dados do Tutorial ---
 const tutorialSteps = [
@@ -158,41 +157,6 @@ const tutorialSteps = [
 export default function App() {
   const [completedTasks, setCompletedTasks] = useState([]);
   const [expandedPhase, setExpandedPhase] = useState('phase1');
-
-  // Configuração para o Discord e Navegador (Meta Tags, Title e Favicon)
-  useEffect(() => {
-    // ----------------------------------------------------------------------
-    // 1. ALTERE O NOME DA ABA AQUI (Texto que aparece no topo do navegador)
-    // ----------------------------------------------------------------------
-    document.title = "Mercurius | Robinhood Testnet";
-    
-    // 2. CONFIGURA O ÍCONE DA ABA (Favicon)
-    let favicon = document.querySelector("link[rel~='icon']");
-    if (!favicon) {
-      favicon = document.createElement('link');
-      favicon.rel = 'icon';
-      document.head.appendChild(favicon);
-    }
-    // Usando a logo da Mercurius como ícone da aba
-    favicon.href = "https://i.imgur.com/QAqVuyN.png";
-
-    // 3. CONFIGURA O CARD DO DISCORD
-    const setMetaTag = (property, content) => {
-      let element = document.querySelector(`meta[property="${property}"]`) || document.querySelector(`meta[name="${property}"]`);
-      if (!element) {
-        element = document.createElement('meta');
-        if (property.startsWith('og:')) element.setAttribute('property', property);
-        else element.setAttribute('name', property);
-        document.head.appendChild(element);
-      }
-      element.setAttribute('content', content);
-    };
-
-    setMetaTag('og:title', 'Guia de Interação: Robinhood Testnet');
-    setMetaTag('og:description', 'Passo a passo completo e gratuito para interagir na testnet da Robinhood e se posicionar para o possível airdrop. Exclusivo Mercurius Crypto.');
-    setMetaTag('og:image', 'https://i.imgur.com/QAqVuyN.png'); // Imagem do preview
-    setMetaTag('theme-color', '#D2FF00'); // Cor da barra lateral do embed no Discord
-  }, []);
 
   // Calcula o progresso total
   const totalTasks = tutorialSteps.reduce((acc, phase) => acc + phase.tasks.length, 0);
@@ -433,7 +397,6 @@ export default function App() {
           </p>
         </div>
       </footer>
-      <SpeedInsights />
     </div>
   );
 }
