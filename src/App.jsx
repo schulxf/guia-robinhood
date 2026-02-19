@@ -283,10 +283,10 @@ export default function App() {
           className="group flex flex-col sm:flex-row items-center justify-center gap-2 bg-[#111] hover:bg-[#151515] border border-gray-800 hover:border-gray-700 rounded-xl p-4 transition-all mb-8 text-center"
         >
           <span className="text-gray-400 text-sm">
-            Ainda não faz parte da Mercurius?
+            Participe do meu treinamento
           </span>
           <span className="text-[#D2FF00] text-sm font-semibold flex items-center gap-1 group-hover:underline">
-            Participe do Reset Cripto <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            Reset Cripto <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </span>
         </a>
 
