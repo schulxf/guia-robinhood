@@ -20,7 +20,7 @@ const tutorialSteps = [
         link: 'https://portal.arbitrum.io/bridge',
         subLinks: [
           { name: 'Minerador de Sepolia', url: 'https://sepolia-faucet.pk910.de/' },
-          { name: 'Comprar Sepolia', url: 'https://sepolia-faucet.pk910.de/' }
+          { name: 'Comprar Sepolia', url: 'https://testnetbridge.com/sepolia' }
         ]
       },
       {
